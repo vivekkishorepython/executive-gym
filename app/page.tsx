@@ -117,20 +117,15 @@ export default async function Home() {
         <div>
           <span className="eyebrow">Why Executive Gym exists</span>
           <h2>
-            Excellence needs
-            <br />a voice.
+            Technical excellence gets you in the room. Your executive voice
+            helps you move forward.
           </h2>
         </div>
         <p>
-          Executive Gym grew from the experience of an IIT graduate with a
-          master’s degree, working in corporate America on an H-1B visa. The
-          lesson was simple: technical excellence alone wasn’t enough to
-          advance. Speaking up, navigating difficult conversations, and
-          influencing decisions required practice, too.
-          <br />
-          <br />
-          This is a space for Indian immigrants and other professionals to build
-          those habits—one realistic workplace moment at a time.
+          Founded by an IIT graduate who learned that succeeding in corporate
+          America takes more than technical expertise, Executive Gym gives
+          immigrants and ambitious professionals a place to practice high-stakes
+          workplace conversations—one situation at a time.
         </p>
       </section>
       <Subscribe />
