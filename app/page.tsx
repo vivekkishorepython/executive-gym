@@ -64,11 +64,10 @@ export default async function Home() {
                 margin: "8px 0",
               }}
             >
-              Choose a skill. Practice your response.
+              Build Your Executive Voice, One Situation at a Time
             </h1>
             <p>
-              Real workplace situations. Thirty seconds to think. Reveal what to
-              say.
+              Choose a skill. Think through the situation. Reveal what to say.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
