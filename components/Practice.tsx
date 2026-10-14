@@ -144,18 +144,12 @@ export default function Practice({
     );
   return (
     <>
-      <section className="practice-wrap">
-        <Link className="quiet-link" href="/#categories">
-          ← Back to the gym
-        </Link>
+      <section className="practice-wrap" aria-label={title}>
         <div className="practice-header">
-          <div>
-            <span className="eyebrow">
-              {weak ? "Your personal workout" : card.category}
-            </span>
-            <h2>{title}</h2>
-          </div>
-          <span className="timer">
+          <Link className="quiet-link" href="/#categories">
+            ← Back to the gym
+          </Link>
+          <span className="timer" aria-label="Card number">
             {index + 1} / {deck.length}
           </span>
         </div>
@@ -176,7 +170,7 @@ export default function Practice({
         ) : (
           <>
             <article
-              className={`flashcard ${revealed ? "flipped" : ""}`}
+              className={`flashcard mt-4! ${revealed ? "flipped" : ""}`}
               key={`${card.id}-${revealed}`}
               aria-label={
                 revealed ? "Recommended response" : "Workplace situation"
@@ -186,13 +180,15 @@ export default function Practice({
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
+                  gap: "16px",
+                  alignItems: "start",
                   width: "100%",
                 }}
               >
                 <span className="eyebrow">
-                  {revealed ? "THEN · Try saying" : "IF · Imagine this"}
+                  {revealed ? "Response" : "Situation"} · {card.category}
                 </span>
-                <span className="timer" aria-label="Time to think">
+                <span className="timer shrink-0" aria-label="Time to think">
                   {revealed
                     ? card.difficulty
                     : seconds > 0
