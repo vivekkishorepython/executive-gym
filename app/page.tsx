@@ -51,55 +51,34 @@ export default async function Home() {
   return (
     <main className="shell">
       <Header />
-      <section className="hero">
-        <div>
-          <span className="eyebrow">
-            <span className="dot" />
-            Your daily workout for the workplace
-          </span>
-          <h1>
-            Stop being overlooked.
-            <br />
-            <em>Start being heard.</em>
-          </h1>
-          <p className="intro">
-            Build the executive reflexes to speak confidently, handle difficult
-            conversations, and influence decisions.
-          </p>
-          <div className="hero-meta">
-            <span>↗ 11 essential skills</span>
-            <span>◷ 30 seconds at a time</span>
-            <span>◎ No account needed</span>
-          </div>
-        </div>
-        <div className="sample">
-          <div className="sample-label">
-            <span>IF → THEN</span>
-            <span>01 / ASSERTIVENESS</span>
-          </div>
-          <h3>Someone criticizes my work.</h3>
-          <hr />
-          <div className="response">
-            “Can you give me a<br />
-            specific example?”
-          </div>
-          <p>
-            Move from vague criticism to specific,
-            <br />
-            actionable feedback.
-          </p>
-        </div>
-      </section>
-      <section id="categories">
-        <div className="section-top">
+      <section id="categories" aria-labelledby="workout-title">
+        <div className="section-top flex-col items-start! gap-4 min-[900px]:flex-row min-[900px]:items-end!">
           <div>
             <span className="eyebrow">Choose your workout</span>
-            <h2>Small reps. Stronger leadership.</h2>
-            <p>Pick a skill. Meet a real situation. Practice your response.</p>
+            <h1
+              id="workout-title"
+              style={{
+                fontSize: "clamp(26px, 4vw, 36px)",
+                lineHeight: 1.2,
+                letterSpacing: "-0.9px",
+                margin: "8px 0",
+              }}
+            >
+              Choose a skill. Practice your response.
+            </h1>
+            <p>
+              Real workplace situations. Thirty seconds to think. Reveal what to
+              say.
+            </p>
           </div>
-          <Link href="/practice" className="quiet-link">
-            Practice all cards ↗
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/practice" className="primary">
+              Practice all cards ↗
+            </Link>
+            <Link href="/practice?mode=weak" className="secondary">
+              Practice my weak cards
+            </Link>
+          </div>
         </div>
         <div className="grid">
           {categories.map((category, index) => {
