@@ -170,7 +170,7 @@ export default function Practice({
         ) : (
           <>
             <article
-              className={`flashcard mt-4! ${revealed ? "flipped" : ""}`}
+              className={`flashcard gap-5 mt-4! ${revealed ? "flipped" : ""}`}
               key={`${card.id}-${revealed}`}
               aria-label={
                 revealed ? "Recommended response" : "Workplace situation"
@@ -229,38 +229,39 @@ export default function Practice({
                   </button>
                 </div>
               )}
+              <nav
+                aria-label="Flashcard navigation"
+                className="controls w-full mt-auto! mb-0! pt-5 border-t border-[#dce2df]"
+                style={{ marginTop: "auto" }}
+              >
+                <button className="secondary" onClick={() => move(-1)}>
+                  ← Previous
+                </button>
+                <button
+                  className="secondary"
+                  onClick={() => {
+                    setDeck(shuffle(deck));
+                    setIndex(0);
+                    setRevealed(false);
+                    setDeadline(Date.now() + 30000);
+                  }}
+                >
+                  Shuffle
+                </button>
+                <button className="primary" onClick={() => move(1)}>
+                  Next →
+                </button>
+              </nav>
             </article>
             <div className="controls">
-              <button className="secondary" onClick={() => move(-1)}>
-                ← Previous
-              </button>
-              <button
-                className="secondary"
-                onClick={() => {
-                  setDeck(shuffle(deck));
-                  setIndex(0);
-                  setRevealed(false);
-                  setDeadline(Date.now() + 30000);
-                }}
-              >
-                Shuffle
-              </button>
-              <button className="primary" onClick={() => move(1)}>
-                Next →
-              </button>
-            </div>
-            <div className="controls">
-              <button className="quiet-link" onClick={again}>
-                Practice Again
-              </button>
               <button className="quiet-link" onClick={() => setFinished(true)}>
                 Finish session
               </button>
-              <Link className="quiet-link" href="/practice?mode=weak">
-                Practice My Weak Cards
-              </Link>
             </div>
-            <p className="status" style={{ textAlign: "center" }}>
+            <p
+              className="status hidden sm:block"
+              style={{ textAlign: "center" }}
+            >
               ← → to navigate · Space to reveal · Progress stays on this browser
             </p>
           </>
